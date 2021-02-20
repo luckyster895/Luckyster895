@@ -9,7 +9,6 @@
 - 💬 Ask me about **Cyber Security | Web Penetration Testing**
 - ⚡ For fun, I love listening to music and Solve CTF Challenges 
 
-
 ### Languages and Tools:
 
 <p align="left">
@@ -19,13 +18,10 @@
   <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/>
   <img src="https://www.vectorlogo.zone/logos/linux/linux-icon.svg" alt="linux" width="40" height="40"/> 
   <img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="github" width="40" height="40"/>
-  <img src="https://www.vectorlogo.zone/logos/virtualbox/virtualbox-icon.svg" alt="github" width="40" height="40"/>
-   
+  <img src="https://www.vectorlogo.zone/logos/virtualbox/virtualbox-icon.svg" alt="github" width="40" height="40"/>   
 </p>
-<br />
 
 ## My Blogs
-
 - <img width="22px" src="https://www.vectorlogo.zone/logos/medium/medium-tile.svg" width="20px"/>[Medium](https://medium.com/@luckyster895) 
 - <img width="22px" src="https://www.vectorlogo.zone/logos/blogger/blogger-icon.svg" width="20px"/> [Blogger](https://abhisecurity.blogspot.com)
 
@@ -34,7 +30,7 @@
 <br />
 
 <img alt="Abhinav's GitHub Stats" src="https://github-readme-stats.codestackr.vercel.app/api?username=luckyster895&show_icons=true&hide_border=true&theme=darcula" />
-<br />
+
 
 ## Connect with me:
 
