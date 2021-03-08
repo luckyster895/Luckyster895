@@ -45,6 +45,6 @@
 
 [instagram]: https://instagram.com/luckyster895
 [linkedin]: https://linkedin.com/in/luckster
-[gmail]: mailto:abhinavs.me@gmail.com
+[gmail]: mailto:luckyster895@gmail.com
 [twitter]: https://twitter.com/luckyster895
 [bugcrowd]: http://bugcrowd.com/Luckyster895
