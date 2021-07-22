@@ -31,7 +31,7 @@
 <br />
 <br />
 
-<img alt="Abhinav's GitHub Stats" src="https://github-readme-stats.codestackr.vercel.app/api?username=luckyster895&show_icons=true&hide_border=true&theme=darcula" />
+<img alt="Abhinav's GitHub Stats" src="https://github-readme-stats.vercel.app/api?username=luckyster895&show_icons=true&theme=dark" />
 
 
 ## Connect with me:
