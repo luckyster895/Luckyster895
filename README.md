@@ -1,11 +1,12 @@
 ### Hi there 👋 I'm Abhinav Saxena
 
 ## I'm a Cyber Security Enthusiast!!
+<img align="right" alt="GIF" src="https://github.com/luckyster895/Luckyster895/blob/master/animated.gif?raw=true" width="400" height="320" />
 
 - 💻 I'm a CSE Final year student!
 - 🧍 Known as Luckyster895
 - 📖 I’m currently learning everything in Web App Security 
-- 🥅 2021 Goals: Learn More and More in Web App and Start Bug bounty
+- 🥅 2021 Goals: Learn More and More in Web App 
 - 🔭 I’m currently working on **Luckeye**[ Repo-Here](https://github.com/luckyster895/Luckeye) .
 - 💬 Ask me about **Cyber Security | Web Penetration Testing**
 - ⚡ For fun, I love listening to music and Solve CTF Challenges 
