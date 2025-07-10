@@ -1,14 +1,12 @@
 ### Hi there 👋 I'm Abhinav Saxena
 
-## I'm a Cyber Security Enthusiast!!
+## I'm a Salesforce Certified Professional!!
 <img align="right" alt="GIF" src="https://github.com/luckyster895/Luckyster895/blob/master/animated.gif?raw=true" width="400" height="320" />
 
-- 💻 I'm a CSE Final year student!
+- 💻 I'm a Salesforce Developer!
 - 🧍 Known as Luckyster895
-- 📖 I’m currently learning everything in Web App Security 
+- 🔭 I’m currently working on Salesforce Marketing Cloud Engagement, Data Cloud , Marketing Cloud, Sales Cloud  
 - 🥅 2021 Goals: Learn More and More in Web App 
-- 🔭 I’m currently working on **Luckeye**[ Repo-Here](https://github.com/luckyster895/Luckeye) .
-- 💬 Ask me about **Cyber Security | Web Penetration Testing**
 - ⚡ For fun, I love listening to music and Solve CTF Challenges 
 
 ### Languages and Tools:
