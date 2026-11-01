@@ -27,13 +27,8 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Build
-        # Repo named <user>.github.io -> no base path. Any other repo name -> "/<repo>".
+        # Served from the custom domain root (abhinavsaxena.dev), so no base path.
         run: |
-          if [[ "${{ github.event.repository.name }}" == *.github.io ]]; then
-            export NEXT_PUBLIC_BASE_PATH=""
-          else
-            export NEXT_PUBLIC_BASE_PATH="/${{ github.event.repository.name }}"
-          fi
           npm run build
           touch out/.nojekyll
       - uses: actions/upload-pages-artifact@v3
