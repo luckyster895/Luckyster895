@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --surface: #fafafa;
+  --foreground: #111827;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --accent: #2563eb;
+  --accent-2: #2563eb;
+  --shadow: none;
+}
+
+.dark {
+  --background: #0b0d12;
+  --surface: #10131a;
+  --foreground: #f3f4f6;
+  --muted: #9ca3af;
+  --card: #10131a;
+  --border: #232733;
+  --accent: #60a5fa;
+  --accent-2: #60a5fa;
+  --shadow: none;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-line: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.grad-text {
+  color: var(--accent);
+}
+
+.grad-bg {
+  background: var(--accent);
+}
+
+.hero-bg {
+  background: var(--background);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  border-color: var(--accent);
+}
+
+.hl {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+.float { animation: float 9s ease-in-out infinite; }
+.float-slow { animation: float 13s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+/* Print: used by the resume page's "Download PDF" button */
+@media print {
+  @page { margin: 14mm; }
+  .no-print { display: none !important; }
+  body { background: #fff !important; color: #111 !important; }
+  .resume-sheet { box-shadow: none !important; border: none !important; padding: 0 !important; }
+  .resume-sheet * { color: #111 !important; }
+  .resume-sheet .accent-print { color: #5b21b6 !important; }
+}
