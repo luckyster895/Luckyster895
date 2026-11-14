@@ -1,0 +1,221 @@
+/* Direction E: terminal. Tokens are scoped to routes that render .v-term.
+   Dark is the default (see components/terminal/Shell.tsx); light is paper. */
+
+html:has(.v-term) {
+  --background: #f3f1ea;
+  --surface: #eae7dd;
+  --foreground: #141414;
+  --muted: #4d4a44; /* body copy */
+  --dim: #7b766b; /* labels */
+  --card: #f8f6f0;
+  --border: #cdc8ba;
+  --accent: #c8330a; /* signal */
+  --accent-2: #c8330a;
+  --on-accent: #ffffff;
+  --grid: rgb(0 0 0 / 0.045);
+  color-scheme: light;
+}
+
+html.dark:has(.v-term) {
+  --background: #0a0a0a;
+  --surface: #101010;
+  --foreground: #ededed;
+  --muted: #a3a3a3;
+  --dim: #6f6f6f;
+  --card: #101010;
+  --border: #242424;
+  --accent: #ff4d1a;
+  --accent-2: #ff4d1a;
+  --on-accent: #0a0a0a;
+  --grid: rgb(255 255 255 / 0.028);
+  color-scheme: dark;
+}
+
+.v-term {
+  position: relative;
+  isolation: isolate;
+  font-family: var(--font-plex), ui-monospace, monospace;
+  overflow-x: clip;
+}
+
+/* Faint graph-paper grid behind everything. */
+.v-term::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@layer base {
+  .v-term .head {
+    font-family: var(--font-space), var(--font-plex), ui-monospace, monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .v-term .dim {
+    color: var(--dim);
+  }
+}
+
+/* [ BRACKET ] button */
+.v-term .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.v-term .btn::before { content: "["; color: var(--dim); }
+.v-term .btn::after { content: "]"; color: var(--dim); }
+
+.v-term .btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.v-term .btn:hover::before,
+.v-term .btn:hover::after {
+  color: var(--on-accent);
+}
+
+.v-term .chip {
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  font-size: 12px;
+  color: var(--muted);
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.v-term .chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Hero name is typed out letter by letter. Letters are visible by default,
+   so they still show when animations are disabled. */
+.v-term .type span {
+  animation: term-type 1ms linear backwards;
+  animation-delay: calc(500ms + var(--i) * 95ms);
+}
+
+@keyframes term-type {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.v-term .cursor {
+  display: inline-block;
+  width: 0.58em;
+  height: 0.09em;
+  margin-left: 0.04em;
+  background: var(--accent);
+  animation: term-blink 1s steps(1) infinite;
+}
+
+@keyframes term-blink {
+  50% { opacity: 0; }
+}
+
+.v-term .particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0;
+  animation: term-drift linear infinite;
+}
+
+@keyframes term-drift {
+  0% { transform: translateY(0); opacity: 0; }
+  15%, 80% { opacity: 0.45; }
+  100% { transform: translateY(-140px); opacity: 0; }
+}
+
+.v-term .bar {
+  height: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.v-term .bar > div {
+  height: 100%;
+  background: var(--accent);
+}
+
+/* abhinav.ts code window */
+.v-term .code {
+  font-size: 13.5px;
+  line-height: 1.85;
+  white-space: pre;
+  overflow-x: auto;
+  color: var(--foreground);
+}
+
+.v-term .code .kw { color: var(--dim); }
+.v-term .code .str { color: var(--accent); }
+
+.v-term .caret {
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  vertical-align: text-bottom;
+  background: var(--accent);
+  animation: term-blink 1s steps(1) infinite;
+}
+
+/* The skill globe draws its labels in the canvas's own font. */
+.v-term canvas {
+  font-family: var(--font-plex), ui-monospace, monospace;
+}
+
+@media (max-width: 640px) {
+  .v-term .code {
+    font-size: 12px;
+  }
+}
+
+.v-term ::selection {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.v-term :focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* The resume prints as plain black on white, whichever mode is on screen. */
+@media print {
+  html:has(.v-term),
+  html.dark:has(.v-term) {
+    --background: #fff;
+    --surface: #fff;
+    --card: #fff;
+    --foreground: #111;
+    --muted: #333;
+    --dim: #555;
+    --border: #bbb;
+    --accent: #b3300a;
+  }
+
+  .v-term::before {
+    display: none;
+  }
+
+  .v-term .resume-sheet .accent-print {
+    color: #b3300a !important;
+  }
+}
