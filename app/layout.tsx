@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   },
 };
 
-// Light by default; only an explicit "dark" choice switches it on.
-const themeScript = `try{if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark')}}catch(e){}`;
+// Dark by default; only an explicit "light" choice switches it off.
+const themeScript = `try{if(localStorage.getItem('theme')!=='light'){document.documentElement.classList.add('dark')}}catch(e){document.documentElement.classList.add('dark')}`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -46,7 +46,12 @@ export const journey: Job[] = [
     when: "Aug 2026 – Present",
     title: "Senior Salesforce Developer",
     org: "Cloud for Good",
-    note: "Current role.",
+    note: "Current role, focused on Data Cloud, Agentforce and Marketing Cloud Next.",
+    points: [
+      "Data Cloud (Data 360): designing data ingestion, identity resolution and segmentation so marketing runs on unified customer profiles.",
+      "Agentforce: building AI agents grounded in Data Cloud data to automate support and customer engagement.",
+      "Marketing Cloud Next: implementing the next-generation platform and planning migrations from Marketing Cloud Engagement.",
+    ],
   },
   {
     when: "Mar 2024 – Aug 2026",
@@ -112,6 +117,24 @@ export const skills = [
     title: "Security",
     items: ["Web app pen-testing", "Vulnerability assessment", "Security audits", "Security enhancements"],
   },
+];
+
+// Nodes on the animated skill globe (3D and terminal designs).
+export const globeSkills = [
+  "SSJS",
+  "AMPscript",
+  "Journey Builder",
+  "Data Cloud",
+  "Agentforce",
+  "SQL",
+  "REST APIs",
+  "WhatsApp API",
+  "Automation Studio",
+  "Identity resolution",
+  "Segmentation",
+  "Webhooks",
+  "Pen-testing",
+  "MC Next",
 ];
 
 export const certs = [
